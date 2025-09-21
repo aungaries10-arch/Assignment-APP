@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Dice Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="setup-screen" id="setupScreen">
+            <h1 class="game-title">Mystic Dice Adventure</h1>
+            <div class="difficulty-selector">
+                <h3>Choose Difficulty</h3>
+                <div class="difficulty-buttons">
+                    <button class="difficulty-btn easy">Easy</button>
+                    <button class="difficulty-btn medium selected">Medium</button>
+                    <button class="difficulty-btn hard">Hard</button>
+                </div>
+            </div>
+            <div class="player-selection">
+                <h3>Select Players</h3>
+                <div class="players-setup">
+                    <div class="player-card">
+                        <h4>Player 1</h4>
+                        <input type="text" class="player-input" placeholder="Name">
+                        <select class="player-class">
+                            <option value="warrior">Warrior</option>
+                            <option value="mage">Mage</option>
+                            <option value="tank">Tank</option>
+                            <option value="healer">Healer</option>
+                        </select>
+                    </div>
+                    <div class="player-card">
+                        <h4>Player 2</h4>
+                        <input type="text" class="player-input" placeholder="Name">
+                        <select class="player-class">
+                            <option value="warrior">Warrior</option>
+                            <option value="mage">Mage</option>
+                            <option value="tank">Tank</option>
+                            <option value="healer">Healer</option>
+                        </select>
+                    </div>
+                    <div class="player-card">
+                        <h4>Player 3</h4>
+                        <input type="text" class="player-input" placeholder="Name">
+                        <select class="player-class">
+                            <option value="warrior">Warrior</option>
+                            <option value="mage">Mage</option>
+                            <option value="tank">Tank</option>
+                            <option value="healer">Healer</option>
+                        </select>
+                    </div>
+                    <div class="player-card">
+                        <h4>Player 4</h4>
+                        <input type="text" class="player-input" placeholder="Name">
+                        <select class="player-class">
+                            <option value="warrior">Warrior</option>
+                            <option value="mage">Mage</option>
+                            <option value="tank">Tank</option>
+                            <option value="healer">Healer</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="start-game-btn">Start Adventure</button>
+            </div>
+        </div>
+    
+        <div class="game-screen hidden" id="gameScreen">
+            <div class="game-info">
+                <div class="players-status">
+                    <h4>Players Status</h4>
+                    <div id="playerInfo"></div>
+                </div>
+                <div class="board-container">
+                    <div id="gameBoard" class="game-board"></div>
+                </div>
+                <div class="dice-section">
+                    <h4>Current Turn: <span id="currentPlayerName"></span></h4>
+                    <div id="dice" class="dice">?</div>
+                    <button id="rollBtn" class="roll-btn">Roll Dice</button>
+                    <button id="spellBtn" class="roll-btn hidden">Use Spell</button>
+                    <div id="passiveSection" class="hidden">
+                        <p>Use passive ability?</p>
+                        <button id="passiveBtn" class="roll-btn">Use Passive</button>
+                        <button id="skipPassiveBtn" class="roll-btn">Skip</button>
+                    </div>
+                </div>
+            </div>
+            <div class="event-log-container">
+                <h4>Event Log</h4>
+                <div id="eventLog" class="event-log"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="eventModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="eventTitle"></h2>
+            <p id="eventMessage"></p>
+            <button id="eventBtn" class="modal-btn">Continue</button>
+        </div>
+    </div>
+    
+    <div id="victoryModal" class="modal hidden">
+        <div class="modal-content">
+            <h2></h2>
+            <div id="victoryMessage"></div>
+            <button class="modal-btn" onclick="resetGame()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
